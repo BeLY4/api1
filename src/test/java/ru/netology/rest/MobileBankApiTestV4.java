@@ -1,4 +1,4 @@
-package ru.netology.test;
+package ru.netology.rest;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,9 +17,8 @@ class MobileBankApiTestV4 {
                 .get("/demo/accounts")
                 // Проверки
                 .then()
-                // Включаем логирование ответа
-                .log().all()
                 .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("accounts.schema.json"));
+                .body(matchesJsonSchemaInClasspath("accounts.schema.json"))
+        ;
     }
 }
